@@ -13,15 +13,19 @@
   co = checkout
   st = status
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/kips/.gitignore.local
   autocrlf = input
 [merge]
   ff = only
-[commit]
-  template = ~/.gitmessage
 [fetch]
   prune = true
 [rebase]
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
